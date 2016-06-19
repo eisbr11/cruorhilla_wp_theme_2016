@@ -1,0 +1,10 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    HOME_WELCOME.
+
+    {% if concerts is not empty %}
+        {% include "widgets/concert_list.twig" %}
+    {% endif %}
+
+{% endblock %}

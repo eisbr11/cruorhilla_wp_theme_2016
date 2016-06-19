@@ -19,6 +19,8 @@ if ( ! class_exists( 'Timber' ) ) {
 }
 $context = Timber::get_context();
 $context['posts'] = Timber::get_posts();
+$args = 'post_type=concert&numberposts=8&orderby=2';
+$context['concerts'] = Timber::get_posts($args);
 $context['foo'] = 'bar';
 $templates = array( 'index.twig' );
 if ( is_home() ) {
