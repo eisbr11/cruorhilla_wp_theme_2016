@@ -1,0 +1,45 @@
+/* Circles Wrapper */
+.circles-wrapper {
+  width: 100vw;
+  display: table;
+  height: 100vh;
+  position: fixed;
+  z-index: -5;
+}
+
+.circles {
+  margin: 0px auto;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  span {
+    border: 3px solid @ch_pink;
+    border-radius: 999999px;
+    display: table;
+    // Firefox Fix
+    display: -moz-box;
+  }
+  > span {
+    margin: 0 auto;
+    transform: scale(10) skew(5deg);
+  }
+  &.animation-on {
+    animation: rotate 7s infinite linear;
+  }
+  .purple {
+    border-color: @ch_purple;
+    border-width: 4px;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,8 +1,36 @@
-<ul>
-{% for item in menu %}
-	<li class="{{item.classes | join(' ')}}">
-		<a href="{{item.get_link}}">{{item.title}}</a>
-		{% include "menu.twig" with {'menu': item.get_children} %}
-	</li>
-{% endfor %}
-</ul>
+<div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-logo" href="#">
+        <img src="{{ site.theme.uri }}/img/bandlogo_sm.png" alt="Cruor Hilla Logo" height="40" class="visible-xs">
+        <img src="{{ site.theme.uri }}/img/bandlogo_md.png" alt="Cruor Hilla Logo" class="visible-sm visible-md">
+        <img src="{{ site.theme.uri }}/img/bandlogo_lg.png" alt="Cruor Hilla Logo" class="visible-lg">
+    </a>
+
+    <p class="navbar-text text-center visible-xs">Cruor Hilla</p>
+</div>
+
+
+
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-right">
+        {% for item in menu %}
+            {% if item.get_children is not empty %}
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ item.title }}<span class="caret"></span></a>
+                    {% include "submenu.twig" with {'menu': item.get_children} %}
+                </li>
+            {% else %}
+                <li class="{{ item.classes | join(' ') }}">
+                    <a href="{{ item.get_link }}">{{ item.title }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div><!-- /.navbar-collapse -->

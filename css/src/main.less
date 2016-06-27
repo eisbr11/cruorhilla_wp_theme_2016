@@ -1,0 +1,23 @@
+@import "bootstrap/bootstrap";
+@import "mixins/mixins";
+@import "variables";
+@import "components";
+
+
+* {
+  .box-sizing(border-box);
+}
+
+header,
+main,
+footer {
+  color: @white;
+}
+
+img {
+  max-width: 100%;
+  &.teaser-img {
+    margin: 0 auto;
+    display: block;
+  }
+}
