@@ -17,11 +17,23 @@ if ( ! class_exists( 'Timber' ) ) {
 	echo 'Timber not activated. Make sure you activate the plugin in <a href="/wp-admin/plugins.php#timber">/wp-admin/plugins.php</a>';
 	return;
 }
+
 $context = Timber::get_context();
-$context['posts'] = Timber::get_posts();
-$args = 'post_type=concert&numberposts=8&orderby=2';
+
+//$context['posts'] = Timber::get_posts();
+
+$args = array(
+	'post_type'    => 'concert',
+	'orderby'     => 'meta_value',
+	'order'        => 'ASC',
+
+
+	'meta_key'     => 'gig_date',
+	'meta_value'   => date( "Ymd" ), // change to how "event date" is stored
+	'meta_compare' => '>=',
+);
 $context['concerts'] = Timber::get_posts($args);
-$context['foo'] = 'bar';
+
 $templates = array( 'index.twig' );
 if ( is_home() ) {
 	array_unshift( $templates, 'home.twig' );

@@ -14,17 +14,20 @@
 						{% include "menu.twig" with {'menu': menu.get_items} %}
 					</div>
 				</nav><!-- #nav -->
-				<div class="container">
-					<div class="row">
-						<div class="col-xs-12">
-							<h1 class="hdr-logo" role="banner">
-								<a class="hdr-logo-link" href="{{site.siteurl}}" rel="home">{{site.name}}</a>
-							</h1>
-						</div>
-					</div>
-				</div>
 			{% endblock %}
 		</header>
+
+		{% block main_banner %}
+			<div class="container no-bg">
+				<div class="row">
+					<div class="col-xs-12">
+						<h1 class="dark text-center">Zurück ins Bällebad</h1>
+						<h2 class="dark text-center">Cruor Hilla</h2>
+						<img class="teaser-img" src="{{ site.uri }}/img/teddy.png" alt="Zurück ins Bällebad Banner">
+					</div>
+				</div>
+			</div>
+		{% endblock %}
 
 		<main id="content" role="main" class="container">
 			<div class="row">

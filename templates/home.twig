@@ -1,9 +1,21 @@
 {% extends "base.twig" %}
 
+{% block main_banner %}
+    <div class="container no-bg">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1 class="dark text-center">Zurück ins Bällebad</h1>
+                <img class="teaser-img" src="{{ site.theme.uri }}/img/teddy.png" alt="Zurück ins Bällebad Banner">
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
 {% block content %}
-    HOME_WELCOME.
 
     {% if concerts is not empty %}
+        <h2 id="gigs">Konzerte</h2>
         {% include "widgets/concert_list.twig" %}
     {% endif %}
 

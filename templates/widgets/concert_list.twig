@@ -1,10 +1,53 @@
 <div class="concert_list_container">
-    HALLO LISTE
-    {% for concert in concerts %}
+    <div class="dates-table">
+        <div class="dates-row header">
+			<span class="cell date">
+				Wann?
+			</span>
+			<span class="cell location">
+				Wo?
+			</span>
+			<span class="cell title">
+				Hö??
+			</span>
+			<span class="cell ticket">
+				Wie viel?
+			</span>
+        </div>
 
-        {{ concert.gig_date|date }}
+		{% for concert in concerts %}
+			<div class="dates-row">
+				<span class="cell date">
+					<span class="gigDate">
+						{{ concert.gig_date|date }}
+					</span>
+					{% if concert.gig_time is not empty %}
+						<span class="gigTime">
+							{{ concert.gig_time }}
+						</span>
+					{% endif %}
+				</span>
+				<span class="cell location">
+					<span class="gigPlace">
+						{{ concert.gig_town }}
+					</span>
+					<span class="gigVenue">
+						{{ concert.gig_venue }}
+					</span>
+				</span>
 
-
-
-    {% endfor %}
+					<div class="cell title">
+						<div class="gigName">
+							{{ concert.gig_name }}
+						</div>
+						<div class="gigDesc">
+							{{ concert.gig_additional }}
+						</div>
+					</div>
+				<span class="cell ticket">
+					{{ concert.gig_tix_link }}
+				</span>
+			</div>
+		{% endfor %}
+    </div>
 </div>

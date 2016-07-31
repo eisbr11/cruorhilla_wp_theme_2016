@@ -1,0 +1,116 @@
+.dates-table {
+  .dates-row {
+    .clearfix;
+    padding: 5px 0;
+    background-color: #3a3a3a;
+    &:nth-child(odd) {
+      background-color: @ch_gray;
+    }
+    &.header {
+      font-family: CruorHilla, Georgia, "Times New Roman", Times, serif;
+      font-size: 1.5em;
+    }
+  }
+  .cell {
+    float: left;
+    width: 100%;
+    @media (min-width: 300px) {
+      text-align: center;
+      &.date,
+      &.ticket{
+        width: 16%;
+      }
+      &.location,
+      &.title {
+        width: 34%;
+      }
+    }
+  }
+}
+
+.gigDate,
+.gigTime,
+.gigPlace,
+.gigVenue,
+.gigName,
+.gigDesc{
+  display: inline-block;
+  width: 100%;
+}
+
+/**
+ 				<div class="dates-table">
+					<div class="dates-row header">
+						<span class="cell date">
+							Wann?
+						</span>
+						<span class="cell location">
+							Wo?
+						</span>
+						<span class="cell title">
+							Hö??
+						</span>
+						<span class="cell ticket">
+							Wie viel?
+						</span>
+					</div>
+					<div class="dates-row">
+						<span class="cell date">
+							<span class="gigDate">
+								11.10.2016
+							</span>
+							<span class="gigTime">
+								19:00 Uhr
+							</span>
+						</span>
+						<span class="cell location">
+							<span class="gigPlace">
+								Berlin
+							</span>
+							<span class="gigVenue">
+								Potse
+							</span>
+						</span>
+						<div class="cell title">
+							<div class="gigName">
+								Punkmania
+							</div>
+							<div class="gigDesc">
+								mit Systemo und Abbruch
+							</div>
+						</div>
+						<span class="cell ticket">
+							5€ AK
+						</span>
+					</div>
+					<div class="dates-row">
+						<span class="cell date">
+							<span class="gigDate">
+								30.09.2016
+							</span>
+							<span class="gigTime">
+								18:00 Uhr
+							</span>
+						</span>
+						<span class="cell location">
+							<span class="gigPlace">
+								Berlin
+							</span>
+							<span class="gigVenue">
+								Tommy-Weißbecker Haus
+							</span>
+						</span>
+						<div class="cell title">
+							<div class="gigName">
+								Rotz Raus Party
+							</div>
+							<div class="gigDesc">
+								mit vielen tollen Bands
+							</div>
+						</div>
+						<span class="cell ticket">
+							10€ VVK
+						</span>
+					</div>
+				</div>
+ */

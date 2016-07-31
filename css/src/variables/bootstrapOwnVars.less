@@ -5,6 +5,15 @@
 @ch-gray: #1d1d1b;
 @gray-base : @ch-gray;
 
+
+
+//** Global textual link color.
+@link-color:            lighten(@brand-primary,20%);
+//** Link hover color set via `darken()` function.
+@link-hover-color:      lighten(@link-color, 15%);
+//** Link hover decoration.
+@link-hover-decoration: underline;
+
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
@@ -63,7 +72,7 @@
 //=== Inverted navbar
 // CH navbar basics
 @navbar-ch-color:                      lighten(@gray-light, 15%);
-@navbar-ch-bg:                         #222;
+@navbar-ch-bg:                         @ch_gray;
 @navbar-ch-border:                     darken(@navbar-ch-bg, 10%);
 @navbar-ch-font-family:                @font-family-serif;
 
