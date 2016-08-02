@@ -38,15 +38,12 @@ module.exports = grunt => {
 				}
 			},
 			cssmin: {
-				options: {
-					keepSpecialComments: 0
-				},
 				default: {
 					files: [{
 						expand: true,
 						cwd: 'css/build',
 						dest: 'css/build',
-						src: ['*.css'],
+						src: ['*.css', '!*.min.css'],
 						ext: '.min.css'
 					}]
 				}
