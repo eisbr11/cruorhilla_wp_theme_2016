@@ -1,6 +1,6 @@
 <div class="concert_list_container">
     <div class="dates-table">
-        <div class="dates-row header">
+        <div class="dates-row header hidden-xs">
 			<span class="cell date">
 				Wann?
 			</span>
@@ -19,6 +19,7 @@
 			<div class="dates-row">
 				<span class="cell date">
 					<span class="gigDate">
+						<span class="line-label hidden-sm hidden-md hidden-lg">Wann?</span>
 						{{ concert.gig_date|date }}
 					</span>
 					{% if concert.gig_time is not empty %}
@@ -28,6 +29,7 @@
 					{% endif %}
 				</span>
 				<span class="cell location">
+					<span class="line-label hidden-sm hidden-md hidden-lg">Wo?</span>
 					<span class="gigPlace">
 						{{ concert.gig_town }}
 					</span>
@@ -36,16 +38,20 @@
 					</span>
 				</span>
 
-					<div class="cell title">
-						<div class="gigName">
-							{{ concert.gig_name }}
-						</div>
-						<div class="gigDesc">
-							{{ concert.gig_additional }}
-						</div>
-					</div>
+				<span class="cell title">
+					<span class="line-label hidden-sm hidden-md hidden-lg">Hö?</span>
+					<span class="gigName">
+						{{ concert.gig_name }}
+					</span>
+					<span class="gigDesc">
+						{{ concert.gig_additional }}
+					</span>
+				</span>
 				<span class="cell ticket">
-					{{ concert.gig_tix_link }}
+					{% if concert.gig_tix_link is not empty %}
+						<span class="line-label hidden-sm hidden-md hidden-lg">Wie viel?</span>
+						{{ concert.gig_tix_link }}
+					{% endif %}
 				</span>
 			</div>
 		{% endfor %}

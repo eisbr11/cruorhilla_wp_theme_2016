@@ -27,12 +27,25 @@ $args = array(
 	'orderby'     => 'meta_value',
 	'order'        => 'ASC',
 
-
 	'meta_key'     => 'gig_date',
 	'meta_value'   => date( "Ymd" ), // change to how "event date" is stored
 	'meta_compare' => '>=',
 );
 $context['concerts'] = Timber::get_posts($args);
+
+$args = array(
+	'post_type' => 'video',
+	'orderby' => 'meta_value_num',
+	'meta_key' => 'position',
+);
+
+$context['teaser_vid'] = Timber::get_post($args);
+
+$args = array(
+	'post_type' => 'releases',
+);
+
+$context['teaser_release'] = Timber::get_post($args);
 
 $templates = array( 'index.twig' );
 if ( is_home() ) {

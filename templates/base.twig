@@ -22,8 +22,7 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<h1 class="dark text-center">Zurück ins Bällebad</h1>
-						<h2 class="dark text-center">Cruor Hilla</h2>
-						<img class="teaser-img" src="{{ site.uri }}/img/teddy.png" alt="Zurück ins Bällebad Banner">
+						<img class="teaser-img" src="{{ site.theme.uri }}/img/teddy.png" alt="Zurück ins Bällebad Banner">
 					</div>
 				</div>
 			</div>
@@ -33,16 +32,11 @@
 			<div class="row">
 				<div class="col-xs-12">
 					{% if title %}<h1>{{title}}</h1>{% endif %}
-					<div class="wrapper {{sidebar_class}}">
+					<div class="wrapper">
 						{% block content %}
 							Sorry, no content
 						{% endblock %}
 					</div>
-					{% if sidebar %}
-						<aside class="layout-sidebar">
-							{{sidebar}}
-						</aside>
-					{% endif %}
 				</div>
 			</div>
 		</main>
@@ -50,9 +44,7 @@
 		{% block footer %}
 			<footer id="footer" class="container">
 				<div class="row">
-					<div class="col-xs-12">
-						{% include 'footer.twig' %}
-					</div>
+					{% include 'footer.twig' %}
 				</div>
 			</footer>
 			{{ wp_footer }}

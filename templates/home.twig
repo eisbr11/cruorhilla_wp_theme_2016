@@ -1,21 +1,23 @@
 {% extends "base.twig" %}
 
-{% block main_banner %}
-    <div class="container no-bg">
-        <div class="row">
-            <div class="col-xs-12">
-                <h1 class="dark text-center">Zurück ins Bällebad</h1>
-                <img class="teaser-img" src="{{ site.theme.uri }}/img/teddy.png" alt="Zurück ins Bällebad Banner">
-            </div>
-        </div>
-    </div>
-{% endblock %}
-
-
 {% block content %}
 
+    {% include 'widgets/social_media.twig' %}
+
+    {% include 'widgets/album_teaser.twig' %}
+
+    {% if teaser_vid is not empty %}
+        <div id="videos">
+            {% include 'widgets/videos.twig' %}
+        </div>
+    {% endif %}
+
+
+
+
+
     {% if concerts is not empty %}
-        <h2 id="gigs">Konzerte</h2>
+        <h2 class="text-center" id="gigs">Konzerte</h2>
         {% include "widgets/concert_list.twig" %}
     {% endif %}
 

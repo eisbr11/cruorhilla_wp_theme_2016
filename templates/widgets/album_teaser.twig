@@ -1,0 +1,18 @@
+<div class="teaser">
+        <span class="headlineBox">
+            <h2 class="text-center">{{ teaser_release.name }}</h2>
+        </span>
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <img src="{{ teaser_release.thumbnail }}" alt="Zurück ins Bällebad - Albumcover">
+        </div>
+        <div class="col-xs-12 col-md-6">
+            {{ teaser_release.post_content|wpautop }}
+            Tracklist: <br>
+            {{ teaser_release.tracklist }}
+            {% if teaser_release.bandcamp_link is not empty %}
+                <a href="{{ teaser_release.bandcamp_link }}" class="bandcamp_link btn btn-primary"><i class="fa fa-download" aria-hidden="true"></i> kostenlos auf Bandcamp</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
