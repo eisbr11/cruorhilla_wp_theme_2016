@@ -6,19 +6,21 @@
 
     {% include 'widgets/album_teaser.twig' %}
 
-    {% if teaser_vid is not empty %}
-        <div id="videos">
+    {% if teaser_vids is not empty %}
+        <div class="videos--container">
+            <h2 id="videos" class="add--border text-center">Videos</h2>
             {% include 'widgets/videos.twig' %}
         </div>
     {% endif %}
 
-
-
-
-
-    {% if concerts is not empty %}
-        <h2 class="text-center" id="gigs">Konzerte</h2>
-        {% include "widgets/concert_list.twig" %}
-    {% endif %}
+    <div class="gigs--container">
+        <h2 class="add--border text-center" id="gigs">Konzerte</h2>
+        {% if concerts is not empty %}
+            {% include "widgets/concert_list.twig" %}
+        {% endif %}
+        {% if past_gigs is not empty %}
+            <a href="{{ past_gigs.link }}" class="btn btn-primary">Vergangene Konzerte</a>
+        {% endif %}
+    </div>
 
 {% endblock %}

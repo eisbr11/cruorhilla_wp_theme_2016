@@ -1,53 +1,52 @@
 {% block html_head_container %}
-
-{% include 'html-header.twig' %}
-	{% block head %}
-	{% endblock %}
-	</head>
+    {% include 'html-header.twig' %}
+    {% block head %}
+    {% endblock %}
+    </head>
 {% endblock %}
-	<body class="{{body_class}}" data-template="base.twig">
-		{% include 'widgets/circles_bg.twig' %}
-		<header class="header" >
-			{% block header %}
-				<nav id="nav-main" class="navbar navbar-ch" role="navigation">
-					<div class="container">
-						{% include "menu.twig" with {'menu': menu.get_items} %}
-					</div>
-				</nav><!-- #nav -->
-			{% endblock %}
-		</header>
+<body class="{{ body_class }}" data-template="base.twig">
+{% include 'widgets/circles_bg.twig' %}
+<header class="header">
+    {% block header %}
+        <nav id="nav-main" class="navbar navbar-ch" role="navigation">
+            <div class="container">
+                {% include "menu.twig" with {'menu': menu.get_items} %}
+            </div>
+        </nav><!-- #nav -->
+    {% endblock %}
+</header>
 
-		{% block main_banner %}
-			<div class="container no-bg">
-				<div class="row">
-					<div class="col-xs-12">
-						<h1 class="dark text-center">Zurück ins Bällebad</h1>
-						<img class="teaser-img" src="{{ site.theme.uri }}/img/teddy.png" alt="Zurück ins Bällebad Banner">
-					</div>
-				</div>
-			</div>
-		{% endblock %}
+{% block main_banner %}
+    <div class="container no-bg">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1 class="text-center">Zurück ins Bällebad</h1>
+                <img class="teaser-img" src="{{ site.theme.uri }}/img/TEDDYSKULL_hp_white.png" alt="Zurück ins Bällebad Banner">
+            </div>
+        </div>
+    </div>
+{% endblock %}
 
-		<main id="content" role="main" class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					{% if title %}<h1>{{title}}</h1>{% endif %}
-					<div class="wrapper">
-						{% block content %}
-							Sorry, no content
-						{% endblock %}
-					</div>
-				</div>
-			</div>
-		</main>
+<main id="content" role="main" class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            {% if title %}<h1>{{ title }}</h1>{% endif %}
+            <div class="wrapper">
+                {% block content %}
+                    Sorry, no content
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</main>
 
-		{% block footer %}
-			<footer id="footer" class="container">
-				<div class="row">
-					{% include 'footer.twig' %}
-				</div>
-			</footer>
-			{{ wp_footer }}
-		{% endblock %}
-	</body>
+{% block footer %}
+    <footer id="footer" class="container">
+        <div class="row">
+            {% include 'footer.twig' %}
+        </div>
+    </footer>
+    {{ wp_footer }}
+{% endblock %}
+</body>
 </html>
