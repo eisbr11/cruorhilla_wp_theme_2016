@@ -39,13 +39,17 @@ $args = array(
 	'meta_key' => 'position',
 );
 
-$context['teaser_vid'] = Timber::get_post($args);
+$context['teaser_vids'] = Timber::get_posts($args);
 
 $args = array(
 	'post_type' => 'releases',
 );
 
 $context['teaser_release'] = Timber::get_post($args);
+
+$past_gigs_id = 20;
+
+$context['past_gigs'] = Timber::get_post($past_gigs_id);
 
 $templates = array( 'index.twig' );
 if ( is_home() ) {
