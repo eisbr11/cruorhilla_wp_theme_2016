@@ -1,0 +1,25 @@
+.release--container {
+    .flex-grow(0);
+    .flex-shrink(0);
+    .flex-basis(50%);
+    padding: 10px;
+    .release {
+        display: inline-block;
+        font-size: 14px;
+        margin: 10px 0;
+    }
+}
+
+@media (min-width: @screen-xs-min) {
+    .release--container {
+        .flex-grow(0);
+        .flex-basis(33.333333%);
+    }
+}
+
+@media (min-width: @screen-sm-min) {
+    .release--container {
+        .flex-grow(1);
+        .flex-basis(140px);
+    }
+}

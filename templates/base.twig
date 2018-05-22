@@ -5,7 +5,8 @@
     </head>
 {% endblock %}
 <body class="{{ body_class }}" data-template="base.twig">
-{% include 'widgets/circles_bg.twig' %}
+{# {% include 'widgets/circles_bg.twig' %} #}
+{% include 'widgets/space_bg.twig' %}
 <header class="header">
     {% block header %}
         <nav id="nav-main" class="navbar navbar-ch" role="navigation">
@@ -17,11 +18,10 @@
 </header>
 
 {% block main_banner %}
-    <div class="container no-bg">
+    <div class="container {% block main_banner_classes %}no-bg{% endblock %}">
         <div class="row">
             <div class="col-xs-12">
-                <h1 class="text-center">Zurück ins Bällebad</h1>
-                <img class="teaser-img" src="{{ site.theme.uri }}/img/TEDDYSKULL_hp_white.png" alt="Zurück ins Bällebad Banner">
+                <img class="teaser-img angstblitz" src="{{ site.theme.uri }}/img/CH TITEL_sm.png" alt="Cruor Hilla Angst/Blitz">
             </div>
         </div>
     </div>
