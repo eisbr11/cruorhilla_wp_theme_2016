@@ -1,3 +1,4 @@
+{# Albumteaser #}
 <div class="teaser">
     <span class="headlineBox">
         <h2 class="text-center">{{ teaser_release.name }}</h2>
@@ -16,3 +17,22 @@
         </div>
     </div>
 </div>
+
+{# Release-Liste #}
+{% if albums is not empty %}
+    <span class="headlineBox">
+        <h2 class="text-center">Altes Zeug</h2>
+    </span>
+    <div class="flex--wrapper">
+        {% for album in albums %}
+            <a href="{% if album.bandcamp_link %}{{ album.bandcamp_link }}{% else %}#{% endif %}" target="_blank" class="release--container">
+                {# album.name #}
+                <img src="{{ album.thumbnail|resize(360) }}" alt="{{ album.name }}">
+                <span class="release">
+                    {{ album.name }} <br>
+                    <strong>Release:</strong> {{ album.release_date|date("M/Y") }}
+                </span>
+            </a>
+        {% endfor %}
+    </div>
+{% endif %}

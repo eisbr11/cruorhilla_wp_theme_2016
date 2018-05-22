@@ -57,16 +57,19 @@
 
     .navbar-text {
         color: @navbar-ch-color;
-        font-size: 2em;
+        font-size: 1.4em;
         margin: 0;
         line-height: 50px;
+        @media (min-width: @screen-phone) {
+            font-size: 2em;
+        }
     }
 
     .navbar-nav {
         > li > a {
             color: @navbar-ch-link-color;
             text-align: right;
-            font-size: 28px;
+            font-size: 24px;
             &:hover,
             &:focus {
                 color: @navbar-ch-link-hover-color;

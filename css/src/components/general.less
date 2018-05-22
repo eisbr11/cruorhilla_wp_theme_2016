@@ -14,6 +14,9 @@ img {
         margin: 15px auto;
         display: block;
     }
+    &.teaser-img.angstblitz {
+        margin: 105px auto 50px;
+    }
 }
 
 .container {
@@ -21,11 +24,24 @@ img {
     &.no-bg {
         background: none;
     }
+    &.middle-logo {
+        background: 0 0;
+        height: 96vh;
+        min-height: 370px;
+        align-items: center;
+        display: flex;
+    }
 }
+
+h2, .h2 { font-size: floor((@font-size-base * 2.6)); } // 36px
 
 h1, h2, h3, h4 {
     &.add--border {
-        border-top: 5px solid @white;
-        border-bottom: 5px solid @white;
+        border-top: @header-border-width solid @white;
+        border-bottom: @header-border-width solid @white;
     }
+}
+
+@media (min-width: @screen-xs-min) {
+    h2, .h2 { font-size: @font-size-h2; }
 }
