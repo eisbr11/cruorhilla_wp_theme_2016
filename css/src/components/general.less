@@ -33,7 +33,8 @@ img {
     }
 }
 
-h2, .h2 { font-size: floor((@font-size-base * 2.6)); } // 36px
+h1, .h1 { font-size: floor((@font-size-base * 2.4)); } // ~36px
+h2, .h2 { font-size: floor((@font-size-base * 2.3)); } // 36px
 
 h1, h2, h3, h4 {
     &.add--border {
@@ -43,5 +44,10 @@ h1, h2, h3, h4 {
 }
 
 @media (min-width: @screen-xs-min) {
+    h1, .h1 { font-size: floor((@font-size-base * 2.8)); }
     h2, .h2 { font-size: @font-size-h2; }
+}
+
+@media (min-width: @screen-sm-min) {
+    h1, .h1 { font-size: @font-size-h1; }
 }
